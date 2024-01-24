@@ -22,15 +22,15 @@ const InputSrearch = () => {
     <div className="relative">
       <input
         placeholder="Cari Anime..."
-        className="p-2 rounded w-full"
+        className="px-2 py-1 rounded w-full"
         ref={searchRef}
         onKeyDown={handleSearch}
       />
       <button>
         <MagnifyingGlass
-          className="absolute top-2 end-2"
+          className="absolute top-[5px] end-2"
           onClick={handleSearch}
-          size={24}
+          size={20}
         />
       </button>
     </div>

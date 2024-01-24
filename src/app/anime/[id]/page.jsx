@@ -1,10 +1,15 @@
+'use client'
+
 import { getAnimeResponse } from '@/lib/api-libs'
 import VideoPlayer from '@/components/VideoPlayer'
 import Image from 'next/image'
+import { redirect, useRouter } from 'next/navigation'
 
 const Page = async ({ params: { id } }) => {
+  const router = useRouter()
   const { data } = await getAnimeResponse(`anime/${id}`)
-  console.log(data)
+
+  if (!data) redirect('/')
   return (
     <>
       <div className="p-4">
